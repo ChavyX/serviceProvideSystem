@@ -14,22 +14,22 @@ public class ScheduleClient {
     @Resource
     private ScheduleDomainService scheduleDomainService;
 
-    @PostMapping("/add")
+    @PostMapping("/addSchedule")
     public CommonResult<Void> add(@RequestBody Schedule schedule) {
         return CommonResult.of(scheduleDomainService.addSchedule(schedule));
     }
 
-    @PostMapping("/update")
+    @PostMapping("/updateSchedule")
     public CommonResult<Void> update(@RequestBody Schedule schedule) {
         return CommonResult.of(scheduleDomainService.updateSchedule(schedule));
     }
 
-    @GetMapping("/delete")
+    @GetMapping("/deleteSchedule")
     public CommonResult<Void> delete(@RequestParam("id") Integer id) {
         return CommonResult.of(scheduleDomainService.deleteSchedule(id));
     }
 
-    @GetMapping("select")
+    @GetMapping("selectSchedule")
     public CommonResult<Page<Schedule>> select(@RequestParam("id") Integer id,
                                                @RequestParam(value = "size", defaultValue = "10") int size,
                                                @RequestParam(value = "current", defaultValue = "1") int current) {

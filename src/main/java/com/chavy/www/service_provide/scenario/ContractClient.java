@@ -17,12 +17,12 @@ public class ContractClient {
     @Resource
     private ContractService contractService;
 
-    @PostMapping("/sign")
+    @PostMapping("/signContract")
     public CommonResult<Void> sign(@RequestBody Contract contract) {
         return CommonResult.of(contractService.sign(contract));
     }
 
-    @PostMapping("/select")
+    @PostMapping("/selectContract")
     public CommonResult<Page<Contract>> select(@RequestBody ContractQueryDTO contractQueryDTO) {
         return new CommonResult<Page<Contract>>().success(contractService.selectContract(contractQueryDTO.getContract(),
                 contractQueryDTO.getSize(), contractQueryDTO.getCurrent()));

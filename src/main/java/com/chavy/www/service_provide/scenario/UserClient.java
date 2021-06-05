@@ -28,7 +28,7 @@ public class UserClient {
         return CommonResult.of(userDomainService.signUp(user));
     }
 
-    @PostMapping("/select")
+    @PostMapping("/selectUser")
     public CommonResult<Page<User>> selectUserList(@RequestBody UserQueryDTO userQueryDTO) {
         return new CommonResult<Page<User>>().success(userDomainService.selectUserList(userQueryDTO));
     }

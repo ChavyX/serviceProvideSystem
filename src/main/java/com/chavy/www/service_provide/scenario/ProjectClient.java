@@ -15,22 +15,22 @@ public class ProjectClient {
     @Resource
     private ProjectDomainService projectDomainService;
 
-    @PostMapping("/add")
+    @PostMapping("/addProject")
     public CommonResult<Void> add(@RequestBody Project project) {
         return CommonResult.of(projectDomainService.addProject(project));
     }
 
-    @GetMapping("/delete")
+    @GetMapping("/deleteProject")
     public CommonResult<Void> delete(@RequestParam("id") Integer id) {
         return CommonResult.of(projectDomainService.deleteProject(id));
     }
 
-    @PostMapping("/update")
+    @PostMapping("/updateProject")
     public CommonResult<Void> update(@RequestBody Project project) {
         return CommonResult.of(projectDomainService.updateProject(project));
     }
 
-    @PostMapping("/select")
+    @PostMapping("/selectProject")
     public CommonResult<Page<Project>> select(@RequestBody ProjectQueryDTO projectQueryDTO) {
         return new CommonResult<Page<Project>>().success(projectDomainService.selectProject(projectQueryDTO));
     }
