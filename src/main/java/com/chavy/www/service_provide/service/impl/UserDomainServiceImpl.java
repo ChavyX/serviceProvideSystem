@@ -56,7 +56,7 @@ public class UserDomainServiceImpl implements UserDomainService {
         userRequestContext.setCurrent(userQueryDTO.getCurrent());
         userRequestContext.setSize(userQueryDTO.getSize());
         RoleRequestContext roleRequestContext = new RoleRequestContext();
-        roleRequestContext.setRoleId(0);
+        roleRequestContext.setRoleId(1);
         userRequestContext.setUserIdList(roleDomain.selectUserIds(roleRequestContext));
         return userDomain.selectUserList(userRequestContext);
     }
