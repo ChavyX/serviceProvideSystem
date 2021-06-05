@@ -1,7 +1,7 @@
 package com.chavy.www.service_provide.service.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.chavy.www.service_provide.domain.impl.ProjectDomain;
+import com.chavy.www.service_provide.domain.IProjectDomain;
 import com.chavy.www.service_provide.module.Project;
 import com.chavy.www.service_provide.module.context.ProjectRequestContext;
 import com.chavy.www.service_provide.module.dto.ProjectQueryDTO;
@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 public class ProjectDomainServiceImpl implements ProjectDomainService {
 
     @Resource
-    private ProjectDomain projectDomain;
+    private IProjectDomain projectDomain;
 
     @Override
     public boolean addProject(Project project) {
