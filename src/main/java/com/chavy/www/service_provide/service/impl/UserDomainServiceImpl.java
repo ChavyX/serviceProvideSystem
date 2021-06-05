@@ -8,6 +8,7 @@ import com.chavy.www.service_provide.module.User;
 import com.chavy.www.service_provide.module.context.RoleRequestContext;
 import com.chavy.www.service_provide.module.context.UserRequestContext;
 import com.chavy.www.service_provide.module.dto.UserLoginDTO;
+import com.chavy.www.service_provide.module.dto.UserQueryDTO;
 import com.chavy.www.service_provide.service.UserDomainService;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -49,9 +50,11 @@ public class UserDomainServiceImpl implements UserDomainService {
     }
 
     @Override
-    public Page<User> selectUserList(User user) {
+    public Page<User> selectUserList(UserQueryDTO userQueryDTO) {
         UserRequestContext userRequestContext = new UserRequestContext();
-        userRequestContext.setUser(user);
+        userRequestContext.setUser(userQueryDTO.getUser());
+        userRequestContext.setCurrent(userQueryDTO.getCurrent());
+        userRequestContext.setSize(userQueryDTO.getSize());
         RoleRequestContext roleRequestContext = new RoleRequestContext();
         roleRequestContext.setRoleId(0);
         userRequestContext.setUserIdList(roleDomain.selectUserIds(roleRequestContext));
