@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @TableName(value = "contract")
@@ -21,10 +23,10 @@ public class Contract {
     private String content;
 
     @TableField(value = "start_time")
-    private Date startTime;
+    private LocalDateTime startTime;
 
     @TableField(value = "valid_time")
-    private Date validTime;
+    private LocalDateTime validTime;
 
     /**
      * @return id
@@ -85,28 +87,28 @@ public class Contract {
     /**
      * @return start_time
      */
-    public Date getStartTime() {
+    public LocalDateTime getStartTime() {
         return startTime;
     }
 
     /**
      * @param startTime
      */
-    public void setStartTime(Date startTime) {
+    public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;
     }
 
     /**
      * @return valid_time
      */
-    public Date getValidTime() {
+    public LocalDateTime getValidTime() {
         return validTime;
     }
 
     /**
      * @param validTime
      */
-    public void setValidTime(Date validTime) {
+    public void setValidTime(LocalDateTime validTime) {
         this.validTime = validTime;
     }
 }

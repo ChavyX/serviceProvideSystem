@@ -29,7 +29,7 @@ public class ScheduleClient {
         return CommonResult.of(scheduleDomainService.deleteSchedule(id));
     }
 
-    @GetMapping("selectSchedule")
+    @GetMapping("/selectSchedule")
     public CommonResult<Page<Schedule>> select(@RequestParam("id") Integer id,
                                                @RequestParam(value = "size", defaultValue = "10") int size,
                                                @RequestParam(value = "current", defaultValue = "1") int current) {

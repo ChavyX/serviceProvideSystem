@@ -4,7 +4,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.util.Date;
+
+import java.time.LocalDateTime;
 
 @TableName(value = "project")
 public class Project {
@@ -18,10 +19,10 @@ public class Project {
     private String content;
 
     @TableField(value = "start_time")
-    private Date startTime;
+    private LocalDateTime startTime;
 
     @TableField(value = "end_time")
-    private Date endTime;
+    private LocalDateTime endTime;
 
     @TableField(value = "status")
     private Integer status;
@@ -74,28 +75,28 @@ public class Project {
     /**
      * @return start_time
      */
-    public Date getStartTime() {
+    public LocalDateTime getStartTime() {
         return startTime;
     }
 
     /**
      * @param startTime
      */
-    public void setStartTime(Date startTime) {
+    public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;
     }
 
     /**
      * @return end_time
      */
-    public Date getEndTime() {
+    public LocalDateTime getEndTime() {
         return endTime;
     }
 
     /**
      * @param endTime
      */
-    public void setEndTime(Date endTime) {
+    public void setEndTime(LocalDateTime endTime) {
         this.endTime = endTime;
     }
 
